@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- ============================================
- ソルバーの基本情報
-============================================= -->
+<!-- ソルバーの基本条件の定義 -->
 <SolverDefinition 
-name="LIFE_GAME_on_iRIC" 
-caption="LIFE GAME on iRIC" 
-version="0.0.0" 
-copyright="Keita Hoshino" 
-release="2025.03.14" 
-homepage="" 
-executable="life_game.py" 
-iterationtype="time" 
-gridtype="structured2d"
+  name="LIFE_GAME_on_iRIC" 
+  caption="LIFE GAME on iRIC" 
+  version="1.0.25031401" 
+  copyright="Keita Hoshino" 
+  release="2025.03.14" 
+  homepage="" 
+  executable="life_game.py" 
+  iterationtype="time" 
+  gridtype="structured2d"
 >
-
-    <!-- ============================================
-     計算条件の定義
-    ============================================= -->
-    <CalculationCondition>
-        <Tab name="Condition" caption="Condition">
-            <Item name="time_end" caption="time end">
-                <Definition valueType="integer" default="10"/>
-            </Item>
-            <Item name="periodic" caption="periodic boundary condition">
-                <Definition valueType="integer" default="0" checkBox="true"/>
-            </Item>
-        </Tab>
-    </CalculationCondition>
-
-    <GridRelatedCondition>
-
-        <!-- セル属性 -->
-        <Item name="life" caption="Life">
-            <Definition valueType="integer" position="cell" default="max">
-                <Enumerations>
-                    <Enumeration value="0" caption="Dead"/>
-                    <Enumeration value="1" caption="Alive"/>
-                </Enumerations>
-            </Definition>
-        </Item>
-        <Output name="life" caption="life">
-            <Definition valueType="integer" position="cell">
-                <Enumeration value="0" caption="Dead"/>
-                    <Enumeration value="1" caption="Alive"/>
+  <!-- 計算条件の定義 -->
+  <CalculationCondition>
+    <!-- タブの定義 -->
+    <Tab name="Condition" caption="Condition">
+      <!-- 計算終了時刻の定義 -->
+      <Item name="time_end" caption="time end">
+        <Definition valueType="integer" default="10"/>
+      </Item>
+      <!-- 周期境界条件の定義 -->
+      <Item name="periodic" caption="periodic boundary condition">
+        <Definition valueType="integer" default="0" checkBox="true"/>
+      </Item>
+    </Tab>
+  </CalculationCondition>
+  <!-- 格子属性の定義 -->
+  <GridRelatedCondition>
+    <!-- セルの生死(計算格子の属性) -->
+    <Item name="life" caption="Life">
+      <Definition valueType="integer" position="cell" default="max">
+        <Enumeration value="0" caption="Dead"/>
+        <Enumeration value="1" caption="Alive"/>
+      </Definition>
+    </Item>
+    <!-- セルの生死(計算結果の属性) -->
+    <Output name="life" caption="life">
+      <Definition valueType="integer" position="cell">
+        <Enumeration value="0" caption="Dead"/>
+        <Enumeration value="1" caption="Alive"/>
 			</Definition>	
-        </Output>
-
-    </GridRelatedCondition>
-
+    </Output>
+  </GridRelatedCondition>
 </SolverDefinition>

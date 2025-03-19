@@ -1,0 +1,7 @@
+# Life Game on iRIC
+
+This solver simulates the state of a grid based on the rules of the Game of Life. The Game of Life is a type of cellular automaton devised by British mathematician John Horton Conway. Each cell has a state of "alive" or "dead," and the next state is determined by the states of neighboring cells.
+
+## Rules of the Game of Life
+1. A living cell continues to live if it has 2 or 3 living neighboring cells. Otherwise, it dies (due to underpopulation or overpopulation).
+2. A dead cell becomes alive if it has exactly 3 living neighboring cells.
